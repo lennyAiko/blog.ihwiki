@@ -1,0 +1,23 @@
+---
+import { SITE_HOME } from "../config";
+---
+
+<header class="w-full flex justify-between p-3 md:p-5">
+  <a
+    class="font-bold text-lg text-primary md:text-xl hover:scale-105 transtion-transform duration-200 ease-out"
+    href="/"
+  >
+    The ihwiki blog
+  </a>
+  <div class="flex items-center cursor-pointer group">
+    <a
+      class="text-primary font-bold text-lg md:text-xl"
+      href={SITE_HOME}
+      target="_blank">ihwiki.tech</a
+    >
+    <span
+      class="text-lg -mt-1 text-primary font-bold group-hover:translate-x-1 transition-transform duration-200 ease-out"
+      >→</span
+    >
+  </div>
+</header>

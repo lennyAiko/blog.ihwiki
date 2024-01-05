@@ -1,4 +1,5 @@
 ---
+import SiteLayout from "../layouts/SiteLayout.astro";
 const articles = (await Astro.glob("./articles/*.{md,mdx}"))
   .filter((post) => !post.frontmatter.draft)
   .sort(
@@ -8,20 +9,11 @@ const articles = (await Astro.glob("./articles/*.{md,mdx}"))
   );
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-    {
-      articles.map((article) => (
-        <a href={article.url}>{article.frontmatter.title}</a>
-      ))
-    }
-  </body>
-</html>
+<SiteLayout>
+  <h1>Astro</h1>
+  {
+    articles.map((article) => (
+      <a href={article.url}>{article.frontmatter.title}</a>
+    ))
+  }
+</SiteLayout>
