@@ -10,10 +10,51 @@ const articles = (await Astro.glob("./articles/*.{md,mdx}"))
 ---
 
 <SiteLayout>
-  <h1>Astro</h1>
-  {
-    articles.map((article) => (
-      <a href={article.url}>{article.frontmatter.title}</a>
-    ))
-  }
+  <main
+    class="flex flex-col items-center mx-auto w-[90vw] md:w-[70vw] lg:w-[60vw]"
+  >
+    <header class="p-0 3xl:p-6 mt-5">
+      <h1
+        class="text-3xl sm:text-4xl lg:text-5xl sm:mb-2 font-bold lg:mb-4 text-primary"
+      >
+        The ihwiki blog
+      </h1>
+      <p class="text-sm sm:text-md lg:text-lg text-black/60">
+        <!-- Resources, Thoughts, Ideas, and Inspiration from ihwiki to help you
+        improve as an indie hacker. -->
+        Unlock a wealth of Resources, Insights, Creative Ideas, and Inspirational
+        Nuggets curated by ihwiki, meticulously designed to elevate your journey
+        as an Indie Hacker.
+      </p>
+    </header>
+
+    <section class="mt-5">
+      {
+        [1, 2, 3, 4, 5].map((i) => (
+          <div class="my-5">
+            <hr class="my-3" />
+            <time class="text-primary/70 lg:text-lg">December 7, 2023</time>
+            <h2 class="font-semibold text-lg md:text-xl my-2">sails-mongo</h2>
+            <p class="line-clamp-2 md:text-md lg:text-lg text-black/70">
+              sails-mongo 2.1.0 is out, this minor release brings an upgrade of
+              the MongoDB driver used in the adapter from version 3.7.3 to
+              6.3.0.
+            </p>
+            <div class="flex items-center cursor-pointer group w-fit mt-2">
+              <a
+                class="text-primary/80 group-hover:text-primary/95 transition-colors duration-200 ease-out font-bold sm:text-lg"
+                href="/"
+                target="_blank"
+              >
+                Read more
+              </a>
+              <span class="text-lg -mt-1 text-primary/80 group-hover:text-primary/95 font-bold group-hover:translate-x-1 transition-all duration-200 ease-out">
+                →
+              </span>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </main>
 </SiteLayout>
