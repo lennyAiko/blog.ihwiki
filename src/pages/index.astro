@@ -40,7 +40,7 @@ const articles = (await Astro.glob("./articles/*.{md,mdx}"))
               the MongoDB driver used in the adapter from version 3.7.3 to
               6.3.0.
             </p>
-            <div class="flex items-center cursor-pointer group w-fit mt-2">
+            <div class="flex items-center gap-1 cursor-pointer group w-fit mt-2">
               <a
                 class="text-primary/80 group-hover:text-primary/95 transition-colors duration-200 ease-out font-bold sm:text-lg"
                 href="/"
@@ -48,7 +48,7 @@ const articles = (await Astro.glob("./articles/*.{md,mdx}"))
               >
                 Read more
               </a>
-              <span class="text-lg -mt-1 text-primary/80 group-hover:text-primary/95 font-bold group-hover:translate-x-1 transition-all duration-200 ease-out">
+              <span class="text-lg -mt-1 text-primary/80 group-hover:text-primary/95 font-bold group-hover:translate-x-1 transition-all duration-200 ease-out hidden lg:flex">
                 →
               </span>
             </div>
